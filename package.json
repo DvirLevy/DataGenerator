@@ -1,0 +1,15 @@
+{
+  "name": "automationtaskdvirlevy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "personalDataGen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node personalDataGen.js"
+  },
+  "author": "Dvir Levy",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^6.1.2"
+  }
+}
