@@ -8,12 +8,13 @@ const { faker } = require('@faker-js/faker')
  * @returns array of objcet with identities 
  */
 exports.getData = (userInput) =>{
-    let persons = []
+    // let persons = []
     // let id = await faker.mersenne.rand(10e8).toString()
-
+    parseInt(userInput)
     for(i = 0 ; i < userInput ; i++){
-        persons[i] = new Person(faker.internet.email(), faker.name.firstName(), faker.name.lastName(),
-                                    faker.address.city(), faker.address.country(), faker.mersenne.rand(10e8).toString()).createObject()
+        const person = new Person(faker.internet.email(), faker.name.firstName(), faker.name.lastName(),
+                                    faker.address.city(), faker.address.country(), faker.mersenne.rand(10e8).toString())
+        person.printPerson()
     }
-    return persons
+    
 }

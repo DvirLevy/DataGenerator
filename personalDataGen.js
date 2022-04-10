@@ -6,10 +6,13 @@ const dataGen = require('./services/dataGen')
  */
 const main= async () =>{
     try{
-        let userInput = await getInput.getAnswer()
-        
-        console.log(dataGen.getData(userInput))
+        isAlive = true
+        while(isAlive){
+            let userInput = await getInput.getAnswer()
+            dataGen.getData(userInput)
         // .then(data => console.log(data)).catch(err => console.log(err))
+        }
+        
     }
     catch(error){
         console.error(error)

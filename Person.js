@@ -173,5 +173,8 @@ class Person {
             id : this.#id
         }
     }
+    printPerson(){
+        return console.log(`${this.#email},${this.#firstName},${this.#lastName},${this.#city},${this.#country},${this.#id}`)
+    }
 }
 module.exports = Person

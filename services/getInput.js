@@ -1,4 +1,5 @@
 const readLine = require('readline')
+const {textSrv} = require('./textHandler')
 
 /**
  * public method for getting the user's input and prompt directions for the user
@@ -11,21 +12,21 @@ exports.getAnswer = () =>{
     })
     
     return new Promise((resolve, reject)=> {
-        rl.question("How many persons data would you like to generate ? for exit type -1\n", (answer,err) =>{
-            if(err)
-                reject(err)
-            else if(answer.trim() > 0){
-                    rl.close()
-                    resolve (answer)
-            }
-            else if(answer.trim() == -1){
-                console.log("bye bye...")
-                rl.close()
-                process.exit()
-            }
+    //     rl.question(textSrv(), (answer,err) =>{
+    //         if(err)
+    //             reject(err)
+    //         else if(answer.trim() > 0){
+    //                 rl.close()
+    //                 resolve (answer)
+    //         }
+    //         else if(answer.trim() == -1){
+    //             console.log(textSrv(answer.trim()))
+    //             rl.close()
+    //             process.exit()
+    //         }
 
-            else{
-                rl.setPrompt("Please use only positive numbers bigger then 0,\n(for exit the program type -1)\n")
+    //         else{
+                rl.setPrompt(textSrv(1))
                 rl.prompt()
                 rl.on('line', answer =>{
                     if(answer.trim() > 0){
@@ -33,16 +34,16 @@ exports.getAnswer = () =>{
                         resolve(answer) 
                     }
                     else if(answer.trim() == -1){
-                        console.log("bye bye...")
+                        console.log(textSrv(answer.trim()))
                         rl.close()
                         process.exit()
                     }
                     else if(answer.trim < -1 || isNaN(answer.trim)){
-                        rl.setPrompt(`your input ${answer} is not valid, please try again...\n`)
+                        rl.setPrompt(textSrv(answer))
                         rl.prompt()
                     }
                 })
-            }             
-        }) 
+            // }             
+        // }) 
     })                            
 }
