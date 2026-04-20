@@ -1,5 +1,5 @@
 /**
- * RGBImage class creates an image that hold a 2D array of pixel, each pixel created with RGBColor class
+ * Person class creates a peron with his details
  *
  * @author: Dvir Levy
  */
